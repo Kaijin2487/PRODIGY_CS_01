@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Caesar Cipher Tool</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f0f0f0;
+        }
+        form, textarea, input {
+            margin-bottom: 20px;
+        }
+        textarea, input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+        }
+        select {
+            padding: 10px;
+            font-size: 16px;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .result {
+            font-weight: bold;
+            font-size: 18px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Caesar Cipher Encryptor / Decryptor</h2>
+        <form method="POST">
+            <label>Enter your message:</label><br>
+            <textarea name="text" rows="5" required></textarea><br>
+
+            <label>Shift value:</label><br>
+            <input type="number" name="shift" required><br>
+
+            <label>Mode:</label><br>
+            <select name="mode">
+                <option value="encrypt">Encrypt</option>
+                <option value="decrypt">Decrypt</option>
+            </select><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+
+        {% if result %}
+            <div class="result">
+                Result: {{ result }}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
